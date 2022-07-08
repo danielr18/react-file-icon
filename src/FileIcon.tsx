@@ -1,53 +1,50 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import tinycolor from 'tinycolor2';
 import uniqueId from 'lodash.uniqueid';
 
 import glyphs from './glyphs';
 
-const propTypes = {
+export type IconType =
+  | '3d'
+  | 'acrobat'
+  | 'audio'
+  | 'binary'
+  | 'code'
+  | 'compressed'
+  | 'document'
+  | 'drive'
+  | 'font'
+  | 'image'
+  | 'presentation'
+  | 'settings'
+  | 'spreadsheet'
+  | 'vector'
+  | 'video';
+
+export interface FileIconProps {
   /** Color of icon background */
-  color: PropTypes.string,
+  color?: string | undefined;
   /** Text to display in label */
-  extension: PropTypes.string,
+  extension?: string | undefined;
   /** Displays the corner fold */
-  fold: PropTypes.bool,
+  fold?: boolean | undefined;
   /** Color of the corner fold */
-  foldColor: PropTypes.string,
+  foldColor?: string | undefined;
   /** Color of file type icon */
-  glyphColor: PropTypes.string,
+  glyphColor?: string | undefined;
   /** Color of page gradient */
-  gradientColor: PropTypes.string,
+  gradientColor?: string | undefined;
   /** Opacity of page gradient */
-  gradientOpacity: PropTypes.number,
+  gradientOpacity?: number | undefined;
   /** Color of label */
-  labelColor: PropTypes.string,
+  labelColor?: string | undefined;
   /** Color of label text */
-  labelTextColor: PropTypes.string,
+  labelTextColor?: string | undefined;
   /** Displays the label in all caps */
-  labelUppercase: PropTypes.bool,
-  /** Corner radius of the file icon */
-  radius: PropTypes.number,
-  /** Type of glyph icon to display */
-  type: PropTypes.oneOf([
-    '3d',
-    'acrobat',
-    'audio',
-    'binary',
-    'code',
-    'code2',
-    'compressed',
-    'document',
-    'drive',
-    'font',
-    'image',
-    'presentation',
-    'settings',
-    'spreadsheet',
-    'vector',
-    'video',
-  ]),
-};
+  labelUppercase?: boolean | undefined;
+  radius?: number | undefined;
+  type?: IconType | undefined;
+}
 
 const VIEWBOX = {
   WIDTH: 40,
@@ -79,7 +76,7 @@ export const FileIcon = ({
   labelUppercase = false,
   radius = 4,
   type,
-}) => {
+}: FileIconProps) => {
   const UNIQUE_ID = uniqueId();
 
   return (
@@ -215,12 +212,11 @@ export const FileIcon = ({
           transform={`translate(-4 ${!extension ? 6 : 0})`}
           fill={glyphColor || tinycolor(color).darken(15).toString()}
         >
-          {glyphs[type]}
+          {glyphs[type] || null}
         </g>
       )}
     </svg>
   );
 };
 
-FileIcon.propTypes = propTypes;
 export default FileIcon;

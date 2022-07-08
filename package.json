@@ -1,16 +1,17 @@
 {
-  "name": "react-file-icon",
-  "version": "1.1.0",
+  "name": "@danielr18/react-file-icon",
+  "version": "1.2.2",
   "description": "React component to render svg file icons",
   "repository": {
     "url": "https://github.com/corygibbons/react-file-icon"
   },
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "main": "dist/react-file-icon.js",
   "module": "dist/react-file-icon.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "microbundle --jsx React.createElement --no-sourcemap --no-compress",
-    "watch": "microbundle --jsx React.createElement --no-compress --watch",
+    "build": "microbundle --jsx React.createElement --no-sourcemap --no-compress --typescript",
+    "watch": "microbundle --jsx React.createElement --no-compress --typescript --watch",
     "test": "jest --config config/jest.config.js"
   },
   "keywords": [
@@ -23,13 +24,18 @@
   "license": "MIT",
   "dependencies": {
     "lodash.uniqueid": "^4.0.1",
-    "prop-types": "^15.7.2",
     "tinycolor2": "^1.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
+    "@types/jest-image-snapshot": "^5.1.0",
+    "@types/lodash.uniqueid": "^4.0.7",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-test-renderer": "^18.0.0",
+    "@types/tinycolor2": "^1.4.3",
     "babel-jest": "^26.6.0",
     "component-image": "^2.1.1",
     "jest": "^26.6.0",
@@ -37,7 +43,8 @@
     "microbundle": "^0.12.4",
     "react": "^18.0.8",
     "react-dom": "^18.0.8",
-    "react-test-renderer": "^18.0.0"
+    "react-test-renderer": "^18.0.0",
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^17.0.0 || ^16.2.0",

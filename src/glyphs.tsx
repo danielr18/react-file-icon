@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default {
+const glyphs = {
   '3d': (
     <path
       d="M18 14.625V3.375L9 0 0 3.375v11.25L9 18l9-3.375zM9 2.136l5.918 2.22-5.98 2.242-5.919-2.22L9 2.137zM2 13.239V5.065l6.438 2.414v8.174L2 13.24zM9.438 15.7L16 13.239V5.018l-6.563 2.46V15.7z"
@@ -113,3 +113,5 @@ export default {
     />
   ),
 };
+
+export default glyphs;
