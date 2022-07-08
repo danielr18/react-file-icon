@@ -1,12 +1,9 @@
 # React File Icon
 
-[![npm version](https://img.shields.io/npm/v/react-file-icon.svg?style=flat-square)](https://www.npmjs.com/package/react-file-icon)
-[![gh workflow](https://img.shields.io/github/workflow/status/corygibbons/react-file-icon/Test/master.svg?style=flat-square)](https://github.com/corygibbons/react-file-icon/actions?query=workflow%3ATest+branch%3Amaster)
-
-[CodeSandbox demo](https://codesandbox.io/s/react-file-icon-hv4kh) with default icon styles.
+[![npm version](https://img.shields.io/npm/v/@danielr18/react-file-icon.svg?style=flat-square)](https://www.npmjs.com/package/@danielr18/react-file-icon)
 
 ```js
-import { FileIcon } from 'react-file-icon';
+import { FileIcon } from '@danielr18/react-file-icon';
 ```
 
 ## Props
@@ -33,7 +30,7 @@ import { FileIcon } from 'react-file-icon';
 We also export an object of [default styles](https://github.com/corygibbons/react-file-icon/blob/master/src/defaultStyles.js) that can be used as a starting point when rendering icons. Object keys map to file extensions.
 
 ```js
-import { FileIcon, defaultStyles } from 'react-file-icon';
+import { FileIcon, defaultStyles } from '@danielr18/react-file-icon';
 
 // Render a .docx icon with default styles
 <FileIcon extension="docx" {...defaultStyles.docx} />;
